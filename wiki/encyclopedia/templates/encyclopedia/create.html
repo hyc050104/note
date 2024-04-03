@@ -1,0 +1,23 @@
+{% extends "encyclopedia/layout.html" %}
+
+{% block title %}
+    Create New Page
+{% endblock %}
+
+{% block body %}
+<form action="{% url 'note:index'%}" method="post">
+    {% csrf_token %}
+<div style="text-align: center;">
+    <label for="title">Title:</label>
+    <input type="text" name = "title" id="title">
+</div>
+<div style="text-align: center;">
+    <p>Markdown Content:</p>
+    <textarea style="height: 500px;"id="content" name="content"></textarea>
+</div>
+<div style="text-align: center;">
+    <input type="submit" value="SAVE">
+</div>
+</form>
+
+{% endblock %}

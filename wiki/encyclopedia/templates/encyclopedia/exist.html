@@ -1,0 +1,10 @@
+{% extends "encyclopedia/layout.html" %}
+
+{% block title %}
+Existed
+{% endblock %}
+
+{% block body %}
+<h1>This encyclopedia entry already exists!</h1>
+<a href="{% url 'note:entry' title=entry %}">Click here to view it.</a>
+{% endblock %}

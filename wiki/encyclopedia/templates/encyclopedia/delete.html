@@ -1,0 +1,17 @@
+{% extends "encyclopedia/layout.html" %}
+
+{% block title %}
+    Delete Page
+{% endblock %}
+
+{% block body %}
+<form action="{% url 'note:deletepage'%}" method="post">
+    {% csrf_token %}
+<input type="hidden" name="title" value="{{title}}">
+<p>Do you want to delete {{title}}?</p>
+<input type="radio" name="sure" value="true">Yes<br>
+<input type="radio" name="sure" value="false">No<br>
+<input type="submit" value="Ensure">
+</form>
+
+{% endblock %}
